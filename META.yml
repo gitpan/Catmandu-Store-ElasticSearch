@@ -18,7 +18,7 @@ name: Catmandu-Store-ElasticSearch
 provides:
   Catmandu::Store::ElasticSearch:
     file: lib/Catmandu/Store/ElasticSearch.pm
-    version: 0.02
+    version: 0.0201
   Catmandu::Store::ElasticSearch::Bag:
     file: lib/Catmandu/Store/ElasticSearch/Bag.pm
     version: 0
@@ -36,4 +36,4 @@ requires:
   perl: v5.10.1
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.02
+version: 0.0201
