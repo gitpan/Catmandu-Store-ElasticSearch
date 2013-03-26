@@ -4,7 +4,7 @@
       "Nicolas Steenlant <nicolas.steenlant@ugent.be>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "perl_5"
    ],
@@ -23,7 +23,7 @@
       },
       "configure" : {
          "requires" : {
-            "Module::Build" : "0.38"
+            "Module::Build" : "0.40"
          }
       },
       "runtime" : {
@@ -39,7 +39,7 @@
    "provides" : {
       "Catmandu::Store::ElasticSearch" : {
          "file" : "lib/Catmandu/Store/ElasticSearch.pm",
-         "version" : "0.0201"
+         "version" : "0.0202"
       },
       "Catmandu::Store::ElasticSearch::Bag" : {
          "file" : "lib/Catmandu/Store/ElasticSearch/Bag.pm",
@@ -60,5 +60,5 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "0.0201"
+   "version" : "0.0202"
 }
