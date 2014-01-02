@@ -1,5 +1,5 @@
 ---
-abstract: 'A searchable store backed by ElasticSearch'
+abstract: 'A searchable store backed by Elasticsearch'
 author:
   - 'Nicolas Steenlant <nicolas.steenlant@ugent.be>'
 build_requires:
@@ -9,7 +9,7 @@ build_requires:
 configure_requires:
   Module::Build: 0.40
 dynamic_config: 1
-generated_by: 'Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Module::Build version 0.4007, CPAN::Meta::Converter version 2.132830'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -18,22 +18,19 @@ name: Catmandu-Store-ElasticSearch
 provides:
   Catmandu::Store::ElasticSearch:
     file: lib/Catmandu/Store/ElasticSearch.pm
-    version: 0.0203
+    version: 0.0204
   Catmandu::Store::ElasticSearch::Bag:
     file: lib/Catmandu/Store/ElasticSearch/Bag.pm
-    version: 0
   Catmandu::Store::ElasticSearch::CQL:
     file: lib/Catmandu/Store/ElasticSearch/CQL.pm
-    version: 0
   Catmandu::Store::ElasticSearch::Searcher:
     file: lib/Catmandu/Store/ElasticSearch/Searcher.pm
-    version: 0
 requires:
   CQL::Parser: 1.12
-  Catmandu: 0.03
-  ElasticSearch: 0.50
+  Catmandu: 0.8
+  Elasticsearch::Compat: 0.03
   Moo: 1.00
   perl: v5.10.1
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.0203
+version: 0.0204
