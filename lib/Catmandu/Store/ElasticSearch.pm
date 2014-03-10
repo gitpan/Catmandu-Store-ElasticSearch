@@ -2,7 +2,7 @@ package Catmandu::Store::ElasticSearch;
 
 use Catmandu::Sane;
 use Moo;
-use Elasticsearch::Compat;
+use Search::Elasticsearch::Compat;
 use Catmandu::Store::ElasticSearch::Bag;
 
 with 'Catmandu::Store';
@@ -15,15 +15,15 @@ Catmandu::Store::ElasticSearch - A searchable store backed by Elasticsearch
 
 This is the last version of L<Catmandu::Store::ElasticSearch>. Development will
 continue as L<Catmandu::Store::Elasticsearch> using the official
-L<Elasticsearch> client.
+L<Search::Elasticsearch> client.
 
 =head1 VERSION
 
-Version 0.0204
+Version 0.0205
 
 =cut
 
-our $VERSION = '0.0204';
+our $VERSION = '0.0205';
 
 =head1 SYNOPSIS
 
@@ -80,7 +80,8 @@ has elastic_search => (
 
 sub _build_elastic_search {
     my $self = $_[0];
-    my $es = Elasticsearch::Compat->new(delete $self->{_args});
+    my $args = delete $self->{_args};
+    my $es = Search::Elasticsearch::Compat->new($args);
     unless ($es->index_exists(index => $self->index_name)) {
         $es->create_index(
             index => $self->index_name,
@@ -100,6 +101,11 @@ sub BUILD {
     }
 }
 
+sub drop {
+    my ($self) = @_;
+    $self->elastic_search->delete_index;
+}
+
 =head1 METHODS
 
 =head2 new(index_name => $name, cql_mapping => \%mapping)
@@ -116,7 +122,7 @@ contains a translation of CQL fields into Elasticsearch searchable fields.
           'all'   => 1 ,
           '='     => 1 ,
           '<>'    => 1 ,
-	  'exact' => {field => [qw(mytitle.exact myalttitle.exact)]}
+          'exact' => {field => [qw(mytitle.exact myalttitle.exact)]}
         } ,
         sort  => 1,
         field => 'mytitle',
@@ -147,6 +153,11 @@ subroutine which returns a string or an ARRAY of string with augmented title(s).
 
     1;
 
+=head2 drop
+
+Deletes the elasticsearch index backing this store. Calling functions after
+this may fail until this class is reinstantiated, creating a new index.
+
 =head1 SEE ALSO
 
 L<Catmandu::Store>
@@ -158,6 +169,7 @@ Nicolas Steenlant, C<< <nicolas.steenlant at ugent.be> >>
 =head1 CONTRIBUTORS
 
 Dave Sherohman, C<< dave.sherohman at ub.lu.se >>
+Robin Sheat, C<< robin at kallisti.net.nz >>
 
 =head1 LICENSE AND COPYRIGHT
 
