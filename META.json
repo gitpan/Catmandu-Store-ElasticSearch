@@ -67,7 +67,7 @@
          "web" : "https://github.com/LibreCat/Catmandu-Store-Elasticsearch"
       }
    },
-   "version" : "0.01",
+   "version" : "0.02",
    "x_contributors" : [
       "Dave Sherohman <Dave.Sherohman@ub.lu.se>",
       "Patrick Hochstenbach <patrick.hochstenbach@ugent.be>",

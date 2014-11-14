@@ -33,7 +33,7 @@ resources:
   bugtracker: https://github.com/LibreCat/Catmandu-Store-Elasticsearch/issues
   homepage: https://github.com/LibreCat/Catmandu-Store-Elasticsearch
   repository: https://github.com/LibreCat/Catmandu-Store-Elasticsearch.git
-version: '0.01'
+version: '0.02'
 x_contributors:
   - 'Dave Sherohman <Dave.Sherohman@ub.lu.se>'
   - 'Patrick Hochstenbach <patrick.hochstenbach@ugent.be>'
