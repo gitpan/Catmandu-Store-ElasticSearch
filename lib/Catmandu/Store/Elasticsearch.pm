@@ -11,13 +11,9 @@ with 'Catmandu::Store';
 
 Catmandu::Store::Elasticsearch - A searchable store backed by Elasticsearch
 
-=head1 VERSION
-
-Version 0.01
-
 =cut
 
-our $VERSION = '0.03';
+our $VERSION = '0.0301';
 
 =head1 SYNOPSIS
 
